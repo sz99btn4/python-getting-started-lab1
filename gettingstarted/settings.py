@@ -56,7 +56,7 @@ if IS_HEROKU_APP:
     # validation of the Host header in the incoming HTTP request. On other platforms you may need to
     # list the expected hostnames explicitly in production to prevent HTTP Host header attacks. See:
     # https://docs.djangoproject.com/en/6.0/ref/settings/#std-setting-ALLOWED_HOSTS
-    ALLOWED_HOSTS = ['lab1-python.onrender.com']
+    ALLOWED_HOSTS = ['python-getting-started-lab1-rsk9.onrender.com']
 
     # Redirect all non-HTTPS requests to HTTPS. This requires that:
     # 1. Your app has a TLS/SSL certificate, which all `*.herokuapp.com` domains do by default.
@@ -70,7 +70,7 @@ if IS_HEROKU_APP:
     # https://docs.djangoproject.com/en/6.0/ref/middleware/#http-strict-transport-security
     SECURE_SSL_REDIRECT = True
 else:
-    ALLOWED_HOSTS = ['lab1-python-imlx.onrender.com']
+    ALLOWED_HOSTS = ['python-getting-started-lab1-rsk9.onrender.com']
 
 
 # Application definition
