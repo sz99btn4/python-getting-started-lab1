@@ -70,7 +70,7 @@ if IS_HEROKU_APP:
     # https://docs.djangoproject.com/en/6.0/ref/middleware/#http-strict-transport-security
     SECURE_SSL_REDIRECT = True
 else:
-    ALLOWED_HOSTS = ['python-getting-started-lab1-rsk9.onrender.com']
+    ALLOWED_HOSTS = ['python-getting-started-lab1-rsk9.onrender.com', 'localhost']
 
 
 # Application definition
@@ -141,10 +141,9 @@ if IS_HEROKU_APP:
     # https://github.com/jazzband/dj-database-url
     DATABASES = {
         "default": dj_database_url.config(
-            env="DATABASE_URL",
+            default=os.environ.get("DATABASE_URL","sqlite://db.sqlite3"),
             conn_max_age=600,
             conn_health_checks=True,
-            ssl_require=True,
         ),
     }
 else:

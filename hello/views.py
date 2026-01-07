@@ -1,12 +1,14 @@
 from django.shortcuts import render
 
-from .models import Greeting
+from .models import Greeting, Visit
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, "index.html")
+    Visit.objects.create()
+    visits = Visit.objects.count()
+    return render(request, "index.html", {"visits":visits})
 
 
 def db(request):
